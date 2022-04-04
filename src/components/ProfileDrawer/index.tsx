@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container, Menu } from "./styles";
 import profileImg from '../../assets/profileImg.jpg'
 export function ProfileDrawer() {
   return (
@@ -7,11 +7,15 @@ export function ProfileDrawer() {
         <section className="profile-photo-container">
           <img src={profileImg} alt="Profile Image" />
         </section>
-        <nav>
+        <Menu>
+          <span></span>
           <a>Account settings</a>
+          <span></span>
           <a>Preferences</a>
+          <span></span>
           <a>I don't know</a>
-        </nav>
+          <span></span>
+        </Menu>
         <button type="button">
           Logout
         </button>
