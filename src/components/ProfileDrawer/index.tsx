@@ -5,7 +5,6 @@ export function ProfileDrawer() {
     <Container>
       <div>
         <section className="profile-photo-container">
-          <img src={profileImg} alt="Profile Image" />
         </section>
         <Menu>
           <span></span>
