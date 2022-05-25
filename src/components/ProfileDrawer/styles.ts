@@ -4,6 +4,14 @@ export const Container = styled.aside`
   min-height: 100vh;
   display: flex;
   align-items: center;
+  left: -18%;
+  position: fixed;
+  transition: 650ms;
+
+  &.active {
+    left: 0%;
+    transition: 350ms;
+  }
 
   div {
     display: flex;
@@ -12,6 +20,7 @@ export const Container = styled.aside`
     background: var(--background-drawer);
     width: 250px;
     height: 75vh;
+    min-height: 550px;
     border-radius:0 1rem 1rem 0;
     padding: 0.5rem;
     box-shadow:
@@ -52,15 +61,36 @@ export const Menu = styled.section`
   display: flex;
   flex-direction: column;
   text-align: left;
-  
-  a {       
+
+  a {
     color: var(--text-title);
     padding: 0.4rem 0 0.4rem 10%;
     width: fit-content;
+    font-weight: 600;
   }
-  
+
   span {
     border-top: 0.5px solid #D2D2D3;
     width: 15rem;
+  }
+`
+
+export const DrawerToggleButton = styled.button`
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--purple);
+  font-weight: 600;
+  color: #FFF;
+  position: absolute;
+  top: 10%;
+  left: -2%;
+  transition: 650ms;
+  z-index: 1000;
+
+  &.active {
+    left: 16%;
+    transition: 350ms;
   }
 `
