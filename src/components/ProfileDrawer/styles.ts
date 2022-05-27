@@ -2,42 +2,44 @@ import styled from "styled-components";
 import Arrow from '../../assets/Arrow.svg';
 
 export const Container = styled.aside`
-  min-height: 100vh;
-  display: flex;
   align-items: center;
-  left: -18%;
-  position: fixed;
+  display: flex;
+  left: -255px;
+  min-height: 100vh;
+  position: absolute;
   transition: 650ms;
+  visibility: hidden;
 
   &.active {
-    left: 0%;
+    left: 0;
     transition: 350ms;
+    visibility: visible;
   }
 
   div {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     background: var(--background-drawer);
-    width: 250px;
-    height: 75vh;
-    min-height: 550px;
     border-radius:0 1rem 1rem 0;
-    padding: 0.5rem;
     box-shadow:
       0 1px 1px hsl(0deg 0% 0% / 0.075),
       0 2px 2px hsl(0deg 0% 0% / 0.075),
       0 4px 4px hsl(0deg 0% 0% / 0.075),
       0 8px 8px hsl(0deg 0% 0% / 0.075),
       0 16px 16px hsl(0deg 0% 0% / 0.075);
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    min-height: 550px;
+    padding: 0.5rem;
+    width: 250px;
 
     .profile-photo-container {
-      width:121px;
-      height: 121px;
-      overflow: hidden;
       border-radius: 50%;
-      margin: 3rem 0;
       filter: drop-shadow(1px 2px 4px hsl(220deg 0% 0% / 0.095));
+      height: 121px;
+      margin: 3rem 0;
+      overflow: hidden;
+      width:121px;
     }
 
     img {
@@ -45,29 +47,29 @@ export const Container = styled.aside`
     }
 
     button {
-      width: 121px;
-      height: 35px;
+      background-color: var(--purple);
       border: none;
       border-radius: 25px;
-      background-color: var(--purple);
-      font-weight: 600;
       color: #FFF;
       filter: drop-shadow(1px 2px 4px hsl(220deg 0% 0% / 0.075));
+      font-weight: 600;
+      height: 35px;
+      width: 121px;
     }
   }
 `
 
 export const Menu = styled.section`
-  height: 60%;
   display: flex;
   flex-direction: column;
+  height: 60%;
   text-align: left;
 
   a {
     color: var(--text-title);
+    font-weight: 600;
     padding: 0.4rem 0 0.4rem 10%;
     width: fit-content;
-    font-weight: 600;
   }
 
   span {
@@ -76,24 +78,24 @@ export const Menu = styled.section`
   }
 `
 export const DrawerToggleButton = styled.button`
-  width: 48px;
-  height: 48px;
   background: url(${Arrow}) center no-repeat;
-  transform: rotate(0deg);
+  background-color: var(--purple);
   border: none;
   border-radius: 25px;
-  background-color: var(--purple);
-  font-weight: 600;
   color: #FFF;
+  font-weight: 600;
+  height: 48px;
+  left: -20px;
+  margin-top: 100px;
   position: absolute;
-  top: 10%;
-  left: 130%;
   transition: 650ms;
+  transform: rotate(0deg);
+  width: 48px;
   z-index: 1000;
 
   &.active {
+    left: 220px;
     transform: rotate(180deg);
-    left: 90%;
     transition: 350ms;
   }
 `

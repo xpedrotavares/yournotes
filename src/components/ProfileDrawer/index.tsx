@@ -11,12 +11,12 @@ export function ProfileDrawer() {
 
   return (
     <>
-      <Container className={DrawerIsOpen ? 'drawer-menu active' : 'drawer-menu'}>
       <DrawerToggleButton
         className={DrawerIsOpen ? 'drawer-toggle-button active' : 'drawer-toggle-button'}
         type="button"
         onClick={DrawerToggle}
       />
+      <Container className={DrawerIsOpen ? 'drawer-menu active' : 'drawer-menu'}>
         <div>
           <section className="profile-photo-container">
             <img src={profileImg} alt="Profile" />
