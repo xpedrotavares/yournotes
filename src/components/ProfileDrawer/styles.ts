@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Arrow from '../../assets/Arrow.svg';
 
 export const Container = styled.aside`
   min-height: 100vh;
@@ -28,8 +29,8 @@ export const Container = styled.aside`
       0 2px 2px hsl(0deg 0% 0% / 0.075),
       0 4px 4px hsl(0deg 0% 0% / 0.075),
       0 8px 8px hsl(0deg 0% 0% / 0.075),
-      0 16px 16px hsl(0deg 0% 0% / 0.075)
-    ;
+      0 16px 16px hsl(0deg 0% 0% / 0.075);
+
     .profile-photo-container {
       width:121px;
       height: 121px;
@@ -74,10 +75,11 @@ export const Menu = styled.section`
     width: 15rem;
   }
 `
-
 export const DrawerToggleButton = styled.button`
   width: 48px;
   height: 48px;
+  background: url(${Arrow}) center no-repeat;
+  transform: rotate(0deg);
   border: none;
   border-radius: 25px;
   background-color: var(--purple);
@@ -85,12 +87,13 @@ export const DrawerToggleButton = styled.button`
   color: #FFF;
   position: absolute;
   top: 10%;
-  left: -2%;
+  left: 130%;
   transition: 650ms;
   z-index: 1000;
 
   &.active {
-    left: 16%;
+    transform: rotate(180deg);
+    left: 90%;
     transition: 350ms;
   }
 `

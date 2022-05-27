@@ -3,18 +3,20 @@ import { Container, DrawerToggleButton, Menu } from "./styles";
 import profileImg from '../../assets/profileImg.jpg';
 
 export function ProfileDrawer() {
-  let [toggle, setToggle] = useState(false);
+  let [DrawerIsOpen, setDrawerIsOpen] = useState(false);
 
   function DrawerToggle() {
-    setToggle(!toggle);
+    setDrawerIsOpen(!DrawerIsOpen);
   };
 
   return (
     <>
-      <DrawerToggleButton className={toggle ? 'drawer-toggle-button active' : 'drawer-toggle-button'} type="button"  onClick={DrawerToggle}>
-        -----&gt;
-      </DrawerToggleButton>
-      <Container className={toggle ? 'drawer-menu active' : 'drawer-menu'}>
+      <Container className={DrawerIsOpen ? 'drawer-menu active' : 'drawer-menu'}>
+      <DrawerToggleButton
+        className={DrawerIsOpen ? 'drawer-toggle-button active' : 'drawer-toggle-button'}
+        type="button"
+        onClick={DrawerToggle}
+      />
         <div>
           <section className="profile-photo-container">
             <img src={profileImg} alt="Profile" />
